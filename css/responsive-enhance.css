@@ -1,0 +1,735 @@
+/* ==========================================================================
+   Apurva's Dental — Enhanced Responsive Fixes
+   Covers: phones (320-480px), tablets (481-768px), laptops (769-1024px),
+           desktops/labs (1025px+)
+   ========================================================================== */
+
+/* ── Base mobile safety ───────────────────────────────────────────────── */
+html,
+body {
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+img,
+video,
+iframe,
+embed,
+object {
+  max-width: 100%;
+  height: auto;
+}
+
+/* ── Smooth touch scrolling ───────────────────────────────────────────── */
+* {
+  -webkit-tap-highlight-color: transparent;
+}
+
+html {
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ── Container safe padding on small screens ──────────────────────────── */
+@media (max-width: 480px) {
+  .container {
+    padding: 0 16px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   TYPOGRAPHY — fluid scaling
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .section-head h2 {
+    font-size: clamp(24px, 6vw, 36px);
+  }
+
+  .hero-home h1,
+  .page-hero h1 {
+    font-size: clamp(28px, 7vw, 42px);
+  }
+
+  .cta-inner h2 {
+    font-size: clamp(26px, 6vw, 40px);
+  }
+
+  .about-intro h2 {
+    font-size: clamp(26px, 6vw, 38px);
+  }
+
+  .svc-apple-hero h1 {
+    font-size: clamp(28px, 7vw, 48px);
+  }
+}
+
+@media (max-width: 480px) {
+  .section-head h2 {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+
+  .hero-home h1,
+  .page-hero h1 {
+    font-size: clamp(24px, 8vw, 34px);
+  }
+
+  .cta-inner h2 {
+    font-size: clamp(22px, 7vw, 32px);
+  }
+
+  .about-intro h2 {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+
+  .svc-apple-hero h1 {
+    font-size: clamp(24px, 8vw, 36px);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   NAVIGATION
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .nav .container {
+    padding: 0 12px;
+  }
+
+  /* Shrink logo text on tiny screens */
+  .nav .logo {
+    font-size: 15px;
+  }
+
+  /* Hide the Book Visit button text, keep icon badge */
+  .nav-right .btn--sm span:not(.icon-badge) {
+    display: none;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   HERO SECTION
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .hero-cta-buttons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    font-size: 15px;
+    padding: 14px 26px;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-trust-row {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  /* Hero slideshow text */
+  .hero-home h1 {
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.5);
+  }
+}
+
+@media (max-width: 480px) {
+
+  .btn-hero-primary,
+  .btn-hero-secondary {
+    font-size: 14px;
+    padding: 13px 20px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   SERVICES CARDS (horizontal scroll strip)
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .svc-card {
+    grid-template-columns: 1fr;
+    flex: 0 0 min(96vw, 420px);
+  }
+
+  .svc-card .svc-photo {
+    min-height: 200px;
+  }
+
+  .svc-card .svc-text {
+    padding: 28px 24px;
+  }
+
+  .svc-card h3 {
+    font-size: 20px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   DOCTOR CARDS
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .team-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+
+  .doctor-home-img-wrap {
+    height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .team-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .doctor-home-img-wrap {
+    height: 220px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   WHY CHOOSE US / ACCORDION
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 980px) {
+  .why-grid {
+    gap: 36px;
+  }
+
+  .why-photo {
+    height: 360px;
+  }
+}
+
+@media (max-width: 600px) {
+  .why-photo {
+    height: 280px;
+  }
+
+  .accordion-item summary {
+    font-size: 16px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   FACT / ABOUT SUCCESS GRID
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .fact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fact-card.tall {
+    min-height: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fact-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   BLOG GRID
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .blog-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+  }
+
+  .blog-card {
+    height: 240px;
+  }
+
+  .blog-card h4 {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .blog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .blog-card {
+    height: 220px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   FAQ GRID
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 980px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+}
+
+@media (max-width: 600px) {
+  .faq-item summary {
+    font-size: 16px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   FOOTER
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px;
+    padding: 32px 0;
+  }
+
+  .footer-contact .phone {
+    font-size: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   SERVICES PAGE APPLE GRID
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 1024px) {
+  .apple-tech-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 600px) {
+  .apple-tech-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   TREATMENT ESTIMATOR
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 900px) {
+  .estimator-layout {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .estimator-box {
+    padding: 32px 24px;
+  }
+}
+
+@media (max-width: 480px) {
+  .estimator-box {
+    padding: 24px 16px;
+    border-radius: 20px;
+  }
+
+  .estimator-grid-metrics {
+    grid-template-columns: 1fr;
+  }
+
+  .estimator-display-card {
+    padding: 24px 18px;
+  }
+
+  .estimator-display-fin {
+    font-size: 22px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   BEFORE & AFTER SLIDER
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .ba-container {
+    height: 280px;
+    border-radius: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .ba-container {
+    height: 220px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   AWARD TABS
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .award-tabs {
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .award-tab {
+    padding: 12px;
+  }
+
+  .award-tab .ic {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 380px) {
+  .award-tabs {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   COLLAGE (About page)
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .collage {
+    gap: 10px;
+    overflow-x: auto;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    padding-bottom: 10px;
+    scrollbar-width: none;
+  }
+
+  .collage::-webkit-scrollbar {
+    display: none;
+  }
+
+  .collage .c1,
+  .collage .c2,
+  .collage .c3,
+  .collage .c4,
+  .collage .c5 {
+    flex: 0 0 auto;
+  }
+
+  .collage .c3 {
+    width: 240px;
+  }
+}
+
+@media (max-width: 480px) {
+  .collage .c1 {
+    width: 120px;
+    height: 170px;
+  }
+
+  .collage .c2 {
+    width: 120px;
+    height: 110px;
+  }
+
+  .collage .c3 {
+    width: 200px;
+    height: 200px;
+  }
+
+  .collage .c4 {
+    width: 120px;
+    height: 140px;
+  }
+
+  .collage .c5 {
+    width: 120px;
+    height: 180px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PAGE HERO (inner pages)
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .page-hero {
+    padding-top: 130px;
+    padding-bottom: 40px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(28px, 7vw, 42px);
+  }
+
+  .page-hero .row {
+    gap: 24px;
+  }
+
+  .page-hero .stats {
+    text-align: left;
+  }
+
+  .page-hero .stats .num {
+    font-size: 34px;
+  }
+
+  .hero-photo-full {
+    height: 280px;
+    margin-top: 32px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding-top: 110px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(24px, 8vw, 34px);
+  }
+
+  .hero-photo-full {
+    height: 220px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   FEATURED POST (Blog page)
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .featured-post .txt {
+    padding: 28px 24px;
+  }
+
+  .featured-post h3 {
+    font-size: 22px;
+  }
+}
+
+@media (max-width: 480px) {
+  .featured-post .txt {
+    padding: 20px 16px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   CTA BAND
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .cta-inner {
+    padding: 70px 0 30px;
+  }
+
+  .cta-inner p {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-inner {
+    padding: 50px 0 24px;
+  }
+
+  .cta-inner h2 {
+    font-size: clamp(22px, 7vw, 30px);
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   FLOATING CONCIERGE — compact on mobile
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .floating-concierge {
+    right: 14px;
+    bottom: 14px;
+    gap: 8px;
+  }
+
+  .concierge-book-btn {
+    font-size: 12px;
+    padding: 11px 16px;
+  }
+
+  .concierge-call-btn {
+    width: 44px;
+    height: 44px;
+  }
+
+  .concierge-call-btn svg {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   STAT CARDS (horizontal scroll strip)
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .stat-card {
+    flex: 0 0 260px;
+    padding: 20px 18px;
+  }
+
+  .stat-card .num {
+    font-size: 38px;
+  }
+
+  .stat-card .label {
+    font-size: 16px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   LOCATION CARDS
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .loc-card {
+    flex: 0 0 240px;
+    height: 300px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   SERVICES PAGE: PROVIDE LIST
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 768px) {
+  .provide-row {
+    padding: 20px 20px;
+  }
+
+  .provide-row h3 {
+    font-size: 18px;
+    flex: 0 0 auto;
+    width: 100%;
+  }
+
+  .provide-row p {
+    font-size: 14px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   ABOUT PAGE: MILESTONE GRID
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 480px) {
+  .about-milestones-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   JOB CARDS (Careers section)
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .job-card {
+    padding: 22px 18px;
+  }
+
+  .job-card h3 {
+    font-size: 20px;
+  }
+
+  .job-card .desc-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   TESTIMONIAL STREAM CARDS
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 380px) {
+  .testi-stream-card {
+    width: 260px;
+    padding: 16px 14px;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   SECTION — tighter padding on small screens
+   ═══════════════════════════════════════════════════════════════════════ */
+@media (max-width: 600px) {
+  .section {
+    padding: 48px 0;
+  }
+
+  .section-head {
+    margin-bottom: 32px;
+  }
+}
+
+@media (max-width: 380px) {
+  .section {
+    padding: 36px 0;
+  }
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   PRINT — basic readability
+   ═══════════════════════════════════════════════════════════════════════ */
+@media print {
+
+  .nav,
+  .floating-concierge,
+  .mobile-nav-drawer,
+  .mobile-nav-overlay,
+  .hero-slideshow,
+  .hero-slide-nav {
+    display: none !important;
+  }
+
+  body {
+    font-size: 12pt;
+    color: #000;
+    background: #fff;
+  }
+
+  a {
+    color: #000;
+  }
+
+  .section {
+    padding: 24pt 0;
+  }
+}
+
+/* Footer social links: keep icon and label on one line */
+.footer-grid .social-list li a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Story & Home Doctors Section Transition: Balanced Spacing Across All Devices */
+.story-scroll-section {
+  height: auto !important;
+  min-height: auto !important;
+  max-height: none !important;
+}
+
+#home-doctors {
+  padding-top: 48px;
+  padding-bottom: 72px;
+}
+
+@media (max-width: 900px) {
+  .story-scroll-section {
+    padding: 40px 0 20px !important;
+  }
+
+  #home-doctors {
+    padding-top: 36px !important;
+    padding-bottom: 56px !important;
+  }
+}
+
+@media (max-width: 600px) {
+  .story-scroll-section {
+    padding: 32px 0 16px !important;
+  }
+
+  #home-doctors {
+    padding-top: 28px !important;
+    padding-bottom: 44px !important;
+  }
+}

@@ -3,62 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Our Doctors &amp; Specialists — Apurva's Dental</title>
+<title>Dr. Akshay Muchate — Dentist &amp; Prosthodontist | Dr. Akshay's Dental</title>
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/responsive-enhance.css">
 <style>
   .doctor-profile-section {
     padding: 130px 0 80px;
     background: #ffffff;
   }
-  .doctor-switch-bar {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-    margin-bottom: 50px;
-    flex-wrap: wrap;
-  }
-  .doc-tab-pill {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    padding: 10px 24px 10px 12px;
-    border-radius: 999px;
-    background: #f1f5f9;
-    border: 2px solid transparent;
-    cursor: pointer;
-    transition: all 0.25s ease;
-    text-decoration: none;
-    color: var(--navy-800);
-  }
-  .doc-tab-pill:hover {
-    background: #e2e8f0;
-    transform: translateY(-2px);
-  }
-  .doc-tab-pill.is-active {
-    background: #ffffff;
-    border-color: #0d9488;
-    box-shadow: 0 10px 25px rgba(13, 148, 136, 0.2);
-    color: #0d9488;
-  }
-  .doc-tab-avatar {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    border: 2px solid #ffffff;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
-  }
-  .doc-tab-name {
-    font-size: 15px;
-    font-weight: 800;
-  }
-  .doc-tab-role {
-    font-size: 12px;
-    color: var(--gray-500);
-    display: block;
-  }
-
   .doctor-card-layout {
     display: grid;
     grid-template-columns: 380px 1fr;
@@ -81,13 +33,15 @@
     width: 100%;
     height: 420px;
     object-fit: cover;
+    object-position: center top;
     display: block;
+    background: #0f1d38;
   }
   .doctor-meta-block {
     padding: 24px;
   }
   .doctor-meta-title {
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 800;
     color: var(--navy-800);
     margin-bottom: 4px;
@@ -97,6 +51,7 @@
     color: #0d9488;
     font-weight: 700;
     margin-bottom: 18px;
+    line-height: 1.4;
   }
   .doctor-key-facts {
     display: flex;
@@ -111,21 +66,32 @@
   .doctor-key-facts div {
     display: flex;
     justify-content: space-between;
+    gap: 12px;
   }
   .doctor-key-facts strong {
     color: var(--navy-800);
+    text-align: right;
   }
-
-  .doctor-bio-pane {
-    display: none;
-    animation: fadeInBio 0.35s ease forwards;
+  .doc-social-bar {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    justify-content: center;
   }
-  .doctor-bio-pane.is-active {
-    display: block;
+  .doc-social-bar a {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #0e1e3e;
+    color: #ffffff;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease;
   }
-  @keyframes fadeInBio {
-    from { opacity: 0; transform: translateY(8px); }
-    to { opacity: 1; transform: translateY(0); }
+  .doc-social-bar a:hover {
+    background: #0d9488;
+    transform: translateY(-2px);
   }
 
   @media (max-width: 980px) {
@@ -134,7 +100,7 @@
       padding: 24px;
     }
     .doctor-main-photo {
-      height: 340px;
+      height: 360px;
     }
   }
 </style>
@@ -145,14 +111,14 @@
   <div class="container">
     <a href="index.html" class="logo">
       <span class="logo-mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9 2 7 3.5 5.5 3.5 4 3.5 3 5 3 7c0 2 .8 3 1 5 .3 2.4 1 8 3 8 1.6 0 1.4-3.4 2-5.5.3-1 .7-1.5 2-1.5s1.7.5 2 1.5c.6 2.1.4 5.5 2 5.5 2 0 2.7-5.6 3-8 .2-2 1-3 1-5 0-2-1-3.5-2.5-3.5C17 3.5 15 2 12 2Z"/></svg></span>
-      Apurva's Dental
+      Dr. Akshay's Dental
     </a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="about.html">About Us</a>
       <a href="services.html">Services</a>
-      <a href="doctor-details.html" class="active"><strong>Doctors</strong></a>
-      <a href="tooth-model.html" class="tooth-link">3D Tooth Model</a>
+      <a href="doctor-details.html" class="active"><strong>Doctor</strong></a>
+      <a href="tooth-model.html" class="tooth-link">3D Tooth Simulator</a>
       <a href="blog.html">Blog</a>
       <a href="contact.html">Contact</a>
     </div>
@@ -172,223 +138,100 @@
   <a href="about.html">About Us</a>
   <a href="services.html">Services</a>
   <a href="services-details.html">Service Details</a>
-  <a href="doctor-details.html"><strong>Our Doctors</strong></a>
-  <a href="tooth-model.html" style="color:var(--accent-400)">3D Tooth Model</a>
-  <a href="blog.html">Blog</a>
+  <a href="doctor-details.html"><strong>Our Doctor</strong></a>
+  <a href="tooth-model.html" style="color:var(--accent-400)">3D Tooth Simulator</a>
+  <a href="blog.html">Blog &amp; Insights</a>
   <a href="contact.html">Book Appointment</a>
+  <div style="margin-top:20px;padding-top:20px;border-top:1px solid rgba(255,255,255,0.1)">
+    <div style="font-size:13px;color:#94a3b8;margin-bottom:6px">Direct Appointment Line</div>
+    <a href="tel:+917249248477" style="font-size:16px;color:#2dd4bf;font-weight:700">+91 7249248477</a>
+  </div>
 </div>
 
 <!-- DOCTORS PROFILE SECTION -->
 <section class="doctor-profile-section">
   <div class="container">
-    <div class="section-head center" style="margin-bottom:36px">
-      <span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L13.8 9.2 21 11 13.8 12.8 12 20 10.2 12.8 3 11 10.2 9.2 12 2Z"/></svg> Clinical Specialists</span>
-      <h2>Meet Our <span class="accent">Clinical Directors</span></h2>
-      <p>Click below to inspect each specialist's clinical portrait, academic pedigree, and comprehensive medical biography.</p>
+    <div class="section-head center" style="margin-bottom:44px">
+      <span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L13.8 9.2 21 11 13.8 12.8 12 20 10.2 12.8 3 11 10.2 9.2 12 2Z"/></svg> Clinical Leadership &amp; Prosthodontics</span>
+      <h2>Meet <span class="accent">Dr. Akshay Muchate</span></h2>
+      <p>Dentist &amp; Specialist in Prosthodontics, Crown &amp; Bridge, and Oral Implantology — Providing compassionate, evidence-based dental excellence in Latur, Maharashtra.</p>
     </div>
 
-    <!-- Interactive Doctor Switcher Tabs -->
-    <div class="doctor-switch-bar">
-      <button class="doc-tab-pill is-active detail-tab-btn" data-target="#olivia">
-        <img src="images/doctor_olivia.jpg" alt="Dr. Olivia" class="doc-tab-avatar">
-        <div style="text-align:left">
-          <span class="doc-tab-name">Dr. Olivia Thompson</span>
-          <span class="doc-tab-role">Pediatric &amp; Prevention</span>
-        </div>
-      </button>
-
-      <button class="doc-tab-pill detail-tab-btn" data-target="#rishi">
-        <img src="images/doctor_rishi.jpg" alt="Dr. Rishi" class="doc-tab-avatar">
-        <div style="text-align:left">
-          <span class="doc-tab-name">Dr. Rishi</span>
-          <span class="doc-tab-role">Cosmetic &amp; Aesthetics</span>
-        </div>
-      </button>
-
-      <button class="doc-tab-pill detail-tab-btn" data-target="#emman">
-        <img src="images/doctor_emman.jpg" alt="Dr. Emman" class="doc-tab-avatar">
-        <div style="text-align:left">
-          <span class="doc-tab-name">Dr. Emman Collins</span>
-          <span class="doc-tab-role">Surgical &amp; Implants</span>
-        </div>
-      </button>
-    </div>
-
-    <!-- DOCTOR 1: DR. OLIVIA THOMPSON -->
-    <div class="detail-pane is-active" id="olivia">
-      <div class="doctor-card-layout">
-        <!-- Photo First -->
-        <div>
-          <div class="doctor-photo-card">
-            <img src="images/doctor_olivia.jpg" alt="Dr. Olivia Thompson, DMD" class="doctor-main-photo">
-            <div class="doctor-meta-block">
-              <div class="doctor-meta-title">Dr. Olivia Thompson, DMD</div>
-              <div class="doctor-meta-dept">Director of Pediatric &amp; Preventive Care</div>
-              <div class="doctor-key-facts">
-                <div><span>Education:</span><strong>Columbia Univ. Dental Med.</strong></div>
-                <div><span>Residency:</span><strong>NY Presbyterian Hospital</strong></div>
-                <div><span>Experience:</span><strong>12+ Years Clinical Practice</strong></div>
-                <div><span>Certification:</span><strong>Diplomate, ABPD Board</strong></div>
-                <div><span>Languages:</span><strong>English, Spanish</strong></div>
-              </div>
-              <a href="contact.html?doctor=olivia" class="btn btn--navy" style="width:100%;justify-content:center">Book with Dr. Olivia <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
+    <!-- SINGLE DOCTOR SHOWCASE -->
+    <div class="doctor-card-layout">
+      <!-- Photo Card -->
+      <div>
+        <div class="doctor-photo-card">
+          <img src="images/doctor_akshay.jpg" alt="Dr. Akshay Muchate - Dentist &amp; Prosthodontist" class="doctor-main-photo">
+          <div class="doctor-meta-block">
+            <div class="doctor-meta-title">Dr. Akshay Muchate</div>
+            <div class="doctor-meta-dept">Dentist • Specialist in Prosthodontics</div>
+            <div class="doctor-key-facts">
+              <div><span>Degree:</span><strong>B.D.S.; M.D.S. (pursuing)</strong></div>
+              <div><span>College:</span><strong>MIDSR Dental College, Latur</strong></div>
+              <div><span>University:</span><strong>MUHS, Nashik</strong></div>
+              <div><span>Council Reg.:</span><strong>Maharashtra State Dental Council</strong></div>
+              <div><span>Reg. Number:</span><strong>A-59790</strong></div>
+              <div><span>Membership:</span><strong>Indian Prosthodontics Society</strong></div>
+              <div><span>Experience:</span><strong>Junior Resident, MIDSR</strong></div>
+              <div><span>Languages:</span><strong>Marathi, Hindi, English</strong></div>
+              <div><span>Location:</span><strong>Latur, Maharashtra, India</strong></div>
             </div>
-          </div>
-        </div>
-
-        <!-- Biography After Photo -->
-        <div>
-          <span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L13.8 9.2 21 11 13.8 12.8 12 20 10.2 12.8 3 11 10.2 9.2 12 2Z"/></svg> Physician Biography</span>
-          <h2 style="font-size:34px;color:var(--navy-800);margin:10px 0 18px">Dedicated to Warm, Fear-Free Dental Care</h2>
-          <p style="font-size:16px;line-height:1.75;color:var(--gray-600);margin-bottom:18px">
-            Dr. Olivia Thompson believes that early positive dental experiences form the bedrock for a lifetime of vibrant oral health. With an innate empathy for anxious children and nervous young adults, she has pioneered minimally invasive protocols combining computerized needle-free anesthesia with warm aromatherapy environments.
-          </p>
-          <p style="font-size:16px;line-height:1.75;color:var(--gray-600);margin-bottom:28px">
-            After graduating top of her class from <strong>Columbia University College of Dental Medicine</strong>, Dr. Thompson served as Chief Pediatric Resident at New York Presbyterian Hospital. She actively lectures at national dental academies on childhood caries prevention and non-invasive laser frenectomies.
-          </p>
-
-          <div style="background:#ffffff;border-radius:20px;padding:26px;border:1px solid rgba(14,30,61,0.08);margin-bottom:30px">
-            <h4 style="font-size:18px;color:var(--navy-800);margin-bottom:16px">Clinical Specializations &amp; Core Procedures</h4>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:14.5px;color:var(--gray-700)">
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Pain-Free Infant Oral Exams</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Biofilm Guided Ultrasonic Polish</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Nitrous Oxide Comfort Sedation</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Early Myofunctional Guidance</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> WaterLase Soft-Tissue Contouring</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Enamel Remineralization Therapy</div>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:28px;align-items:center;padding:18px 24px;background:#ffffff;border-radius:16px;border:1px solid rgba(14,30,61,0.06)">
-            <div>
-              <div style="font-size:12.5px;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.04em">Clinic Schedule</div>
-              <div style="font-size:16px;font-weight:800;color:var(--navy-800)">Monday &ndash; Thursday</div>
-            </div>
-            <div style="width:1px;height:36px;background:var(--gray-200)"></div>
-            <div>
-              <div style="font-size:12.5px;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.04em">Direct Appointments</div>
-              <div style="font-size:16px;font-weight:800;color:#0d9488">+91 9307512816</div>
+            <a href="contact.html" class="btn btn--navy" style="width:100%;justify-content:center">Book Consultation with Dr. Muchate <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
+            
+            <div class="doc-social-bar">
+              <a href="https://www.linkedin.com/in/akshay-muchate" target="_blank" rel="noopener noreferrer" title="LinkedIn Profile"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9h2.8v8.37h-2.8v-8.37M7.86 6.7a1.63 1.63 0 1 0 0 3.26 1.63 1.63 0 0 0 0-3.26Z"/></svg></a>
+              <a href="https://www.instagram.com/akshay_appa7" target="_blank" rel="noopener noreferrer" title="Instagram Profile"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg></a>
+              <a href="https://www.facebook.com/akshay.muchate" target="_blank" rel="noopener noreferrer" title="Facebook Profile"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V9c0-.9.2-1.5 1.6-1.5H17V4.7c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.1H8v3.1h2.5V22h3Z"/></svg></a>
+              <a href="https://x.com/akshay_appa7" target="_blank" rel="noopener noreferrer" title="X Profile"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M4 4l7 8.5L4.4 20H6l5.8-6.4L16 20h4l-7.3-8.9L19.6 4H18l-5.4 6L8 4H4Z"/></svg></a>
+              <a href="https://www.quora.com/profile/Dr-Akshay-Muchate" target="_blank" rel="noopener noreferrer" title="Quora Profile"><svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12c0 4.84 3.44 8.87 8 9.8V19.4c-3.32-.82-5.8-3.82-5.8-7.4 0-4.3 3.5-7.8 7.8-7.8s7.8 3.5 7.8 7.8c0 3.58-2.48 6.58-5.8 7.4v2.4c4.56-.93 8-4.96 8-9.8 0-5.52-4.48-10-10-10zm-1 14h2v2h-2v-2zm0-8h2v6h-2V8z"/></svg></a>
             </div>
           </div>
         </div>
       </div>
-    </div>
 
-    <!-- DOCTOR 2: DR. RISHI -->
-    <div class="detail-pane" id="rishi">
-      <div class="doctor-card-layout">
-        <!-- Photo First -->
-        <div>
-          <div class="doctor-photo-card">
-            <img src="images/doctor_rishi.jpg" alt="Dr. Rishi, DMD, FAGD" class="doctor-main-photo">
-            <div class="doctor-meta-block">
-              <div class="doctor-meta-title">Dr. Rishi, DMD, FAGD</div>
-              <div class="doctor-meta-dept">Chief of Aesthetic &amp; Cosmetic Dentistry</div>
-              <div class="doctor-key-facts">
-                <div><span>Education:</span><strong>Harvard School of Dental Med.</strong></div>
-                <div><span>Fellowship:</span><strong>Digital Prosthodontics, Boston</strong></div>
-                <div><span>Experience:</span><strong>10+ Years Specialized Mastery</strong></div>
-                <div><span>Certification:</span><strong>AACD &bull; Invisalign Diamond</strong></div>
-                <div><span>Languages:</span><strong>English, Hindi</strong></div>
-              </div>
-              <a href="contact.html?doctor=rishi" class="btn btn--navy" style="width:100%;justify-content:center">Book with Dr. Rishi <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
-            </div>
+      <!-- Biography & Credentials -->
+      <div>
+        <span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L13.8 9.2 21 11 13.8 12.8 12 20 10.2 12.8 3 11 10.2 9.2 12 2Z"/></svg> Physician Biography &amp; Academic Pedigree</span>
+        <h2 style="font-size:34px;color:var(--navy-800);margin:10px 0 18px">Restoring Oral Health, Aesthetics &amp; Confidence with Clinical Precision</h2>
+        <p style="font-size:16px;line-height:1.75;color:var(--gray-600);margin-bottom:18px">
+          Dr. Akshay Muchate is a dedicated dental surgeon specializing in <strong>Oral &amp; Maxillofacial Prosthodontics, Crown and Bridge, and Oral Implantology</strong>. He completed his Bachelor of Dental Surgery (B.D.S.) from <strong>MIDSR Dental College, Latur</strong> under the prestigious <strong>Maharashtra University of Health Sciences (MUHS), Nashik</strong>, and is actively pursuing his Master of Dental Surgery (M.D.S.) in Oral Maxillofacial Prosthodontics at the same institution.
+        </p>
+        <p style="font-size:16px;line-height:1.75;color:var(--gray-600);margin-bottom:18px">
+          He worked as an Intern (08/2023 – 09/2024) and is currently a Junior Resident (since 09/2025) at the <strong>Maharashtra Institute of Dental Science and Research (MIDSR), Latur</strong> — a NAAC Accredited 'A' Grade institution.
+        </p>
+        <p style="font-size:16px;line-height:1.75;color:var(--gray-600);margin-bottom:28px">
+          Dr. Muchate holds an active license with the <strong>Maharashtra State Dental Council (Reg. No: A-59790)</strong> and is a member of the <strong>Indian Prosthodontics Society</strong>. His skills include dentistry, health education, patient counseling and nutritional counseling, and he communicates in Marathi, Hindi, and English.
+        </p>
+
+        <!-- Clinical Specializations -->
+        <div style="background:#ffffff;border-radius:20px;padding:26px;border:1px solid rgba(14,30,61,0.08);margin-bottom:30px">
+          <h4 style="font-size:18px;color:var(--navy-800);margin-bottom:16px">Specialization &amp; Skills</h4>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:14.5px;color:var(--gray-700)">
+            <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Oral &amp; Maxillofacial Prosthodontics</div>
+            <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Crown &amp; Bridge</div>
+            <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Oral Implantology</div>
+            <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Health Education</div>
+            <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Patient Counseling</div>
+            <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Nutritional Counseling</div>
           </div>
         </div>
 
-        <!-- Biography After Photo -->
-        <div>
-          <span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L13.8 9.2 21 11 13.8 12.8 12 20 10.2 12.8 3 11 10.2 9.2 12 2Z"/></svg> Physician Biography</span>
-          <h2 style="font-size:34px;color:var(--navy-800);margin:10px 0 18px">Transforming Smiles with Digital Artistry &amp; Precision</h2>
-          <p style="font-size:16px;line-height:1.75;color:var(--gray-600);margin-bottom:18px">
-            Dr. Rishi is a visionary cosmetic dentist renowned for crafting natural-looking, radiant smiles that harmonize with individual facial anatomy. Recognized as a Top 1% Invisalign Diamond Provider, Dr. Rishi integrates 3D facial photogrammetry and master ceramist porcelain layering to eliminate gaps, correct misalignments, and brighten enamel.
-          </p>
-          <p style="font-size:16px;line-height:1.75;color:var(--gray-600);margin-bottom:28px">
-            Graduating with highest honors from <strong>Harvard School of Dental Medicine</strong>, Dr. Rishi completed an advanced fellowship in aesthetic prosthodontics. He has successfully performed over 2,500 smile transformations and regularly trains clinicians internationally on computer-guided smile simulations.
-          </p>
-
-          <div style="background:#ffffff;border-radius:20px;padding:26px;border:1px solid rgba(14,30,61,0.08);margin-bottom:30px">
-            <h4 style="font-size:18px;color:var(--navy-800);margin-bottom:16px">Clinical Specializations &amp; Core Procedures</h4>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:14.5px;color:var(--gray-700)">
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Artisan Porcelain Veneers</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Invisalign Clear Aligner Therapy</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Laser Gingival Symmetry Sculpting</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> In-Office LED Laser Whitening</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Micro-Composite Enamel Bonding</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Digital 3D Smile Makeovers</div>
-            </div>
+        <!-- Clinic Schedule & Contact Row -->
+        <div style="display:flex;gap:28px;align-items:center;padding:18px 24px;background:#ffffff;border-radius:16px;border:1px solid rgba(14,30,61,0.06);flex-wrap:wrap">
+          <div>
+            <div style="font-size:12.5px;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.04em">Clinic Schedule</div>
+            <div style="font-size:16px;font-weight:800;color:var(--navy-800)">Monday &ndash; Saturday</div>
           </div>
-
-          <div style="display:flex;gap:28px;align-items:center;padding:18px 24px;background:#ffffff;border-radius:16px;border:1px solid rgba(14,30,61,0.06)">
-            <div>
-              <div style="font-size:12.5px;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.04em">Clinic Schedule</div>
-              <div style="font-size:16px;font-weight:800;color:var(--navy-800)">Tuesday &ndash; Saturday</div>
-            </div>
-            <div style="width:1px;height:36px;background:var(--gray-200)"></div>
-            <div>
-              <div style="font-size:12.5px;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.04em">Direct Appointments</div>
-              <div style="font-size:16px;font-weight:800;color:#0d9488">+91 9307512816</div>
-            </div>
+          <div style="width:1px;height:36px;background:var(--gray-200)"></div>
+          <div>
+            <div style="font-size:12.5px;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.04em">Direct Appointments</div>
+            <a href="tel:+917249248477" style="font-size:16px;font-weight:800;color:#0d9488;text-decoration:none">+91 7249248477</a>
           </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DOCTOR 3: DR. EMMAN COLLINS -->
-    <div class="detail-pane" id="emman">
-      <div class="doctor-card-layout">
-        <!-- Photo First -->
-        <div>
-          <div class="doctor-photo-card">
-            <img src="images/doctor_emman.jpg" alt="Dr. Emman Collins, DDS, ICOI" class="doctor-main-photo">
-            <div class="doctor-meta-block">
-              <div class="doctor-meta-title">Dr. Emman Collins, DDS, ICOI</div>
-              <div class="doctor-meta-dept">Director of Surgical &amp; Restorative Care</div>
-              <div class="doctor-key-facts">
-                <div><span>Education:</span><strong>UPenn School of Dental Med.</strong></div>
-                <div><span>Residency:</span><strong>Maxillofacial Surgery, Philly</strong></div>
-                <div><span>Experience:</span><strong>15+ Years Implantology</strong></div>
-                <div><span>Certification:</span><strong>Diplomate, ICOI Fellow</strong></div>
-                <div><span>Languages:</span><strong>English, French</strong></div>
-              </div>
-              <a href="contact.html?doctor=emman" class="btn btn--navy" style="width:100%;justify-content:center">Book with Dr. Emman <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Biography After Photo -->
-        <div>
-          <span class="eyebrow"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2L13.8 9.2 21 11 13.8 12.8 12 20 10.2 12.8 3 11 10.2 9.2 12 2Z"/></svg> Physician Biography</span>
-          <h2 style="font-size:34px;color:var(--navy-800);margin:10px 0 18px">Engineering Strength, Function, &amp; Lifelong Chewing Power</h2>
-          <p style="font-size:16px;line-height:1.75;color:var(--gray-600);margin-bottom:18px">
-            Dr. Emman Collins is an internationally acclaimed implant surgeon and prosthodontist specializing in complex full-arch reconstructions, 3D computer-guided implant surgery, and same-day teeth replacement. He approaches each surgical case with meticulous anatomical planning to restore 100% bite function and bone longevity.
-          </p>
-          <p style="font-size:16px;line-height:1.75;color:var(--gray-600);margin-bottom:28px">
-            Holding his Doctorate from the prestigious <strong>University of Pennsylvania School of Dental Medicine</strong>, Dr. Collins achieved Diplomate status with the International Congress of Oral Implantologists (ICOI). Over 15 years, he has successfully placed more than 4,000 implants with an exceptional 99.4% long-term integration rate.
-          </p>
-
-          <div style="background:#ffffff;border-radius:20px;padding:26px;border:1px solid rgba(14,30,61,0.08);margin-bottom:30px">
-            <h4 style="font-size:18px;color:var(--navy-800);margin-bottom:16px">Clinical Specializations &amp; Core Procedures</h4>
-            <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;font-size:14.5px;color:var(--gray-700)">
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> 3D Guided Titanium Dental Implants</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> All-on-4 / Full-Arch Immediate Teeth</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> CAD/CAM Monolithic Zirconia Crowns</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Piezoelectric Bone Regeneration</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Pain-Free Rotary Root Canal Therapy</div>
-              <div style="display:flex;align-items:center;gap:8px"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#0d9488" stroke-width="3"><path d="M5 13l4 4L19 7"/></svg> Same-Day Emergency Trauma Surgery</div>
-            </div>
-          </div>
-
-          <div style="display:flex;gap:28px;align-items:center;padding:18px 24px;background:#ffffff;border-radius:16px;border:1px solid rgba(14,30,61,0.06)">
-            <div>
-              <div style="font-size:12.5px;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.04em">Clinic Schedule</div>
-              <div style="font-size:16px;font-weight:800;color:var(--navy-800)">Wednesday &ndash; Sunday</div>
-            </div>
-            <div style="width:1px;height:36px;background:var(--gray-200)"></div>
-            <div>
-              <div style="font-size:12.5px;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.04em">Direct Appointments</div>
-              <div style="font-size:16px;font-weight:800;color:#0d9488">+91 9307512816</div>
-            </div>
+          <div style="width:1px;height:36px;background:var(--gray-200)"></div>
+          <div>
+            <div style="font-size:12.5px;color:var(--gray-500);text-transform:uppercase;letter-spacing:0.04em">Email Inquiry</div>
+            <a href="mailto:akshayappa7777@gmail.com" style="font-size:14px;font-weight:700;color:var(--navy-800);text-decoration:none">akshayappa7777@gmail.com</a>
           </div>
         </div>
       </div>
@@ -402,16 +245,16 @@
     <div class="footer-top">
       <a href="index.html" class="logo">
         <span class="logo-mark"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C9 2 7 3.5 5.5 3.5 4 3.5 3 5 3 7c0 2 .8 3 1 5 .3 2.4 1 8 3 8 1.6 0 1.4-3.4 2-5.5.3-1 .7-1.5 2-1.5s1.7.5 2 1.5c.6 2.1.4 5.5 2 5.5 2 0 2.7-5.6 3-8 .2-2 1-3 1-5 0-2-1-3.5-2.5-3.5C17 3.5 15 2 12 2Z"/></svg></span>
-        Apurva's Dental
+        Dr. Akshay's Dental
       </a>
       <div class="footer-contact">
-        <div class="phone">+91 9307512816</div>
-        <div class="email">hello@apurvasdental.com</div>
+        <div class="phone"><a href="tel:+917249248477" style="color:inherit;text-decoration:none">+91 7249248477</a></div>
+        <div class="email"><a href="mailto:akshayappa7777@gmail.com" style="color:#a9beda;text-decoration:none">akshayappa7777@gmail.com</a></div>
       </div>
     </div>
     <div class="footer-grid">
       <div>
-        <p>Advanced technology, a caring team, and treatments designed to keep your smile healthy for life.</p>
+        <p>Specialized prosthodontics, modern dental science, and dedicated patient care in Latur, Maharashtra.</p>
         <a href="contact.html" class="btn btn--white btn--sm">Get Appointment <span class="icon-badge"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17L17 7M9 7h8v8"/></svg></span></a>
       </div>
       <div>
@@ -420,7 +263,7 @@
           <li><a href="index.html">Home</a></li>
           <li><a href="about.html">About Us</a></li>
           <li><a href="services.html">Services</a></li>
-          <li><a href="doctor-details.html"><strong>Our Doctors</strong></a></li>
+          <li><a href="doctor-details.html"><strong>Our Doctor</strong></a></li>
           <li><a href="tooth-model.html">3D Tooth Simulator</a></li>
           <li><a href="blog.html">Blog</a></li>
         </ul>
@@ -435,17 +278,17 @@
         </ul>
       </div>
       <div>
-        <h5>Follow us</h5>
+        <h5>Follow Dr. Akshay</h5>
         <ul class="social-list">
-          <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V9c0-.9.2-1.5 1.6-1.5H17V4.7c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.1H8v3.1h2.5V22h3Z"/></svg> Facebook</li>
-          <li><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l7 8.5L4.4 20H6l5.8-6.4L16 20h4l-7.3-8.9L19.6 4H18l-5.4 6L8 4H4Z"/></svg> Twitter / X</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="4" r="2"/><path d="M11 21v-8a3 3 0 0 1 6 0v8M11 13V9"/></svg> LinkedIn</li>
-          <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg> Instagram</li>
+          <li><a href="https://www.facebook.com/akshay.muchate" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 22v-8h2.7l.4-3.1h-3.1V9c0-.9.2-1.5 1.6-1.5H17V4.7c-.3 0-1.3-.1-2.4-.1-2.4 0-4.1 1.5-4.1 4.2v2.1H8v3.1h2.5V22h3Z"/></svg> Facebook</a></li>
+          <li><a href="https://x.com/akshay_appa7" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M4 4l7 8.5L4.4 20H6l5.8-6.4L16 20h4l-7.3-8.9L19.6 4H18l-5.4 6L8 4H4Z"/></svg> Twitter / X</a></li>
+          <li><a href="https://www.linkedin.com/in/akshay-muchate" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="9" width="4" height="12"/><circle cx="5" cy="4" r="2"/><path d="M11 21v-8a3 3 0 0 1 6 0v8M11 13V9"/></svg> LinkedIn</a></li>
+          <li><a href="https://www.instagram.com/akshay_appa7" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg> Instagram</a></li>
         </ul>
       </div>
     </div>
     <div class="footer-bottom">
-      <span>&copy; 2026 Apurva's Dental. Crafted by Web Solutions.</span>
+      <span>&copy; 2026 Dr. Akshay's Dental Clinic. Latur, Maharashtra, India.</span>
       <span>All Rights Reserved&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href="privacy-policy.html">Privacy Policy</a>&nbsp;&nbsp;&bull;&nbsp;&nbsp;<a href="terms.html">Terms</a></span>
     </div>
   </div>
@@ -454,10 +297,10 @@
 <script src="js/main.js"></script>
 <!-- FLOATING ACTION CONCIERGE -->
 <div class="floating-concierge" id="floating-concierge">
-  <a href="tel:+919307512816" class="concierge-call-btn" title="Call Emergency Dentist (24/7 Hotline)">
+  <a href="tel:+917249248477" class="concierge-call-btn" title="Call Clinic Hotline">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
   </a>
-  <a href="contact.html" class="concierge-book-btn" title="Book Instant Consultation">
+  <a href="contact.html" class="concierge-book-btn" title="Book Consultation">
     <span>Book Visit</span>
     <span class="pulse-dot"></span>
   </a>

@@ -24,51 +24,69 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 5500);
   }
 
-  /* 3. Our Story: Scroll-Driven Horizontal Card Conveyor */
+  /* 3. Our Story: Smooth Interactive Horizontal Conveyor */
   const storyContainer = document.getElementById('story-scroll-container');
   const storyTrack = document.getElementById('story-carousel-track');
   const storyFill = document.getElementById('story-progress-fill');
+  const storyViewport = storyContainer ? storyContainer.querySelector('.story-viewport-outer') : null;
 
-  if (storyContainer && storyTrack) {
-    let currentX = 0;
-    let targetX = 0;
+  if (storyContainer) {
+    storyContainer.style.height = '';
+  }
 
-    const onStoryScroll = () => {
-      if (window.innerWidth <= 900) {
-        storyTrack.style.transform = 'none';
-        requestAnimationFrame(onStoryScroll);
-        return;
-      }
+  if (storyViewport && storyTrack) {
+    storyTrack.style.transform = 'none';
 
-      const rect = storyContainer.getBoundingClientRect();
-      const containerHeight = storyContainer.offsetHeight;
-      const windowHeight = window.innerHeight;
-      const navOffset = 68;
-      
-      const totalScrollableDistance = containerHeight - windowHeight;
-      const scrolled = navOffset - rect.top;
-      
-      let progress = 0;
-      if (totalScrollableDistance > 0) {
-        progress = Math.max(0, Math.min(1, scrolled / totalScrollableDistance));
+    // Update progress indicator based on horizontal scroll
+    const updateStoryProgress = () => {
+      const maxScroll = storyViewport.scrollWidth - storyViewport.clientWidth;
+      if (maxScroll > 0 && storyFill) {
+        const pct = Math.min(100, Math.max(0, (storyViewport.scrollLeft / maxScroll) * 100));
+        storyFill.style.width = `${pct}%`;
       }
-      
-      const trackWidth = storyTrack.scrollWidth;
-      const viewportWidth = window.innerWidth;
-      const maxTranslate = Math.max(0, trackWidth - viewportWidth + 80);
-      
-      targetX = progress * maxTranslate;
-      currentX += (targetX - currentX) * 0.2;
-      
-      storyTrack.style.transform = `translateX(${-currentX}px)`;
-      if (storyFill) {
-        storyFill.style.width = `${progress * 100}%`;
-      }
-      
-      requestAnimationFrame(onStoryScroll);
     };
 
-    requestAnimationFrame(onStoryScroll);
+    storyViewport.addEventListener('scroll', updateStoryProgress, { passive: true });
+    window.addEventListener('resize', updateStoryProgress, { passive: true });
+    updateStoryProgress();
+
+    // Mouse drag-to-scroll on desktop
+    let isDown = false;
+    let startX = 0;
+    let scrollLeft = 0;
+
+    storyViewport.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - storyViewport.offsetLeft;
+      scrollLeft = storyViewport.scrollLeft;
+    });
+
+    const stopDrag = () => {
+      isDown = false;
+    };
+
+    window.addEventListener('mouseup', stopDrag);
+    storyViewport.addEventListener('mouseleave', stopDrag);
+
+    storyViewport.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - storyViewport.offsetLeft;
+      const walk = (x - startX) * 1.6;
+      storyViewport.scrollLeft = scrollLeft - walk;
+    });
+
+    // Horizontal wheel conversion when cursor is over the cards
+    storyViewport.addEventListener('wheel', (e) => {
+      if (Math.abs(e.deltaX) < Math.abs(e.deltaY) && Math.abs(e.deltaY) > 6) {
+        const maxScroll = storyViewport.scrollWidth - storyViewport.clientWidth;
+        if ((e.deltaY > 0 && storyViewport.scrollLeft < maxScroll - 2) ||
+            (e.deltaY < 0 && storyViewport.scrollLeft > 2)) {
+          storyViewport.scrollLeft += e.deltaY;
+          e.preventDefault();
+        }
+      }
+    }, { passive: false });
   }
 
   /* 4. Dual-Stream 10 Patient Testimonials Marquee & Interactive Controller */

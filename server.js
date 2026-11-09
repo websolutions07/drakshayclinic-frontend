@@ -1,4 +1,4 @@
-﻿const http = require('http');
+const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
@@ -65,7 +65,10 @@ const server = http.createServer((req, res) => {
 
     res.writeHead(200, {
       'Content-Type': contentType,
-      'Content-Length': stats.size
+      'Content-Length': stats.size,
+      'Cache-Control': 'no-cache, no-store, must-revalidate',
+      'Pragma': 'no-cache',
+      'Expires': '0'
     });
 
     if (req.method === 'HEAD') {
@@ -85,5 +88,5 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, '0.0.0.0', () => {
-  console.log(`Apurva's Dental server running on http://localhost:${PORT}/`);
+  console.log(`Dr. Akshay's Dental server running on http://localhost:${PORT}/`);
 });
